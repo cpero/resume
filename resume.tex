@@ -1,123 +1,118 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Graduate Curriculum Vitae
-% LaTeX Template
-% Version 1.1 (9/12/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
-%
-% Important note:
-% This template requires the res.cls file to be in the same directory as the
-% .tex file. The res.cls file provides the resume style used for structuring the
-% document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass[margin, 10pt]{res} % Use the res.cls style, the font size can be changed to 11pt or 12pt here
-
-\usepackage{helvet} % Default font is the helvetica postscript font
-%\usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
-
-\setlength{\textwidth}{5.1in} % Text width of the document
-
+\documentclass[10pt, a4paper]{cvhari}
+\geometry{left=1.2cm,right=1.2cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.2cm,bottom=1.2cm}
+\usepackage[default]{lato}
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	NAME AND ADDRESS SECTION
-%----------------------------------------------------------------------------------------
+\name{Cody Leroy Pero} 
+\tagline{Software Engineer} % 
+\personalinfo{%
+    \phone{(828) 767-5122}
+    \mailaddress{codypero@gmail.com}
+    \location{Asheville, NC}
+    \linkedin{www.linkedin.com/in/cody-pero}
+    \github{github.com/codypero}
+}
+\makecvheader
+\medskip
 
-\moveleft.5\hoffset\centerline{\large\bf Cody Leroy Pero} % Your name at the top
- 
-\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
- 
-\moveleft.5\hoffset\centerline{446 Sky Ridge Ln} % Your address
-\moveleft.5\hoffset\centerline{Hendersonville, NC 28739}
-\moveleft.5\hoffset\centerline{(828) 767-5122}
-\moveleft.5\hoffset\centerline{codypero@gmail.com}
+\cvsection{Profile}
+    \begin{itemize}
+        \item Full stack developer with professional experience in Java, Typescript, React, and Ruby on Rails.
+        \item Passionate about learning and growth and always looking for new challenges.
+        \item Strong problem solving and analytical skills with a focus on delivering high quality software.
+        \item Excellent communication and collaboration skills, with experience working in remote teams with members around the world.
+    \end{itemize}
+    \medskip
 
-%----------------------------------------------------------------------------------------
+\cvsection{Education}
+    \medskip
+    \education
+        {Western Carolina University}
+        {Bachelor of Science (Computer Science)}
+        {2012 -- 2016}
+        \par
+        \smallskip
+        \begin{itemize}
+            \item GPA 3.2/4.0
+            \item Vice President of the Association of Computing Machinery for 2 years
+            \item Brother of Phi Mu Alpha, a music fraternity focused on community outreach
+            \item Resident Assistant for 2 years
+        \end{itemize}
 
-\begin{resume}
+\cvsection{Professional Experience}
+    \company
+        {Soomo Learning}
+        {Software Engineer}
+        {Asheville, NC}
+        {Feb 2022 -- Mar 2025}
+    \project
+        {E-Learning Platform}
+        {Ruby on Rails, Typescript, React, PostgreSQL, AWS}
+    \begin{itemize}
+        \item Developed and managed a set of microsites using React to communicate with a Rails core monolith. \smallskip
+        \item Created user-friendly admin tools for managing customer data securely and efficiently.\smallskip
+        \item Enhanced student engagement and accessibility through the design and implementation of features, while ensuring the integrity of student annotations and analytics.\smallskip
+        \item Evaluated and integrated SOC 2 security standards. \smallskip
+    \end{itemize}
+    
+    \smallskip
+    \divider
+    \smallskip
+    %\clearpage
 
-%----------------------------------------------------------------------------------------
-%	OBJECTIVE SECTION
-%----------------------------------------------------------------------------------------
- 
-\section{OBJECTIVE}  
+    \company
+        {MIB}
+        {Software Engineer}
+        {Gainesville, FL}
+        {Aug 2017 –- Feb 2022}
+        \project
+            {Custom life insurance platforms}
+            {Java, Maven, JQuery, Javscript, Typescript, React, SQL}
+        
+        \begin{itemize}
+            \item Developed and managed websites utilizing HTML, CSS, JavaScript, React, TailwindCSS, and Java technologies.\smallskip
+            \item Maintained backend systems powered by AJAX with Apache Tomcat, Maven, and SQL integration.\smallskip
+            \item Introduced optimized production build process for projects integrating React and Maven with ViteJS hot-reloading to enhance developer efficiency.\smallskip
+            \item Worked directly with clients to evaluate requirements and implement custom solutions.\smallskip
+        \end{itemize}
 
-With a strong commitment to continuous learning and teamwork, I am eager to leverage my skills in problem-solving, innovation, and collaboration to design impactful tools that enhance user experiences.
+    \smallskip
+    \divider
+    \smallskip
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
+    \company
+        {SCI Fusion 360}
+        {Staff Software Developer}
+        {Charlotte, NC}
+        {May 2016 -- Aug 2017}
+        \project
+        {Software Contracting}
+        {Java, Spring, SQL}
+        
+        \begin{itemize}
+            \item Created a new payment processing application for banks by enhancing an existing Java monolith at IBM. \smallskip
+            \item Developed RESTful API endpoints for user creation, payment processing, and other functionalities.\smallskip
+            \item Oversaw successful deployment to customers.\smallskip
+        \end{itemize}
 
-\section{EDUCATION}
+\medskip
 
-{\sl Bachelor of Computer Science,}  \hfill August 2012 - May 2016 \\
-Western Carolina University, Cullowhee, NC\\
- 
-%----------------------------------------------------------------------------------------
-%	Technology SKILLS SECTION
-%----------------------------------------------------------------------------------------
+\cvsection{Accomplishments}
+    \bigskip
 
-\section{TECHNOLOGY \\ SKILLS} 
-
-{\sl Programming Languages and Tools:} Ruby on Rails, React, Typescript, Java, SQL, NodeJS, HTML, CSS, AWS, and Docker. 
-
-{\sl Software Engineering:} Agile methodologies, Git, CI/CD, a11y accessibility, and SOC 2 compliance. \\
- 
-%----------------------------------------------------------------------------------------
-%	PROFESSIONAL EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
- 
-\section{WORK \\ EXPERIENCE}
-
-{\sl Software Engineer} \hfill February 2022 - March 2025 \\
-Soomo Learning, Asheville, NC \\
-\begin{itemize}
-\item Created and maintained a suite of mircosites using React that interact with a Rails core monolith.
-\item Designed and implemented admin-facing Customer Service tools to make user data easier to manage and create.
-\item Designed and implemented student-facing features to maximize engagement and accessibility while also maintaining student annotations and analytics.
-\item Analyzed and implemented SOC 2 security requirements.
-\end{itemize} 
-
-{\sl Software Engineer} \hfill August 2017 - February 2022 \\
-MIB, Braintree, MA \\
-{\sl Formerly 'Paperless Solutions Group', Gainesville, FL}
-\begin{itemize}
-\item Created and maintained websites built using HTML, CSS, Javascript, React, TailwindCSS, and Java.
-\item Maintained AJAX powered backends using Apache Tomcat, Maven, and SQL.
-\item Created and maintained a production build process used for projects using both React and Maven in combination with ViteJS hot-reloading for a better developer experience.
-\end{itemize} 
-
-{\sl Staff Software Developer} \hfill May 2017 - August 2017 \\
-{\sl Associate Software Developer} \hfill May 2016 - May 2017 \\
-SCI Fusion360, Charlotte, NC
-\begin{itemize}
-\item Worked within an existing IBM payment processing Java monolith to create a new payment processing app for banks.
-\item Designed and developed a suite of RESTful API endpoints to handle user creation, payment processing, and more. 
-\end{itemize} 
-
-%----------------------------------------------------------------------------------------
-%	COMMUNITY SERVICE SECTION
-%---------------------------------------------------------------------------------------- 
-
-% \section{RELAVENT \\ EXPERIENCE}
-
-% {\sl SketchCAD: Senior Capstone} \hfill August 2015 - May 2016 \\
-% Western Carolina University, Cullowhee, NC
-% \begin{itemize} \itemsep -2pt % Reduce space between items
-% \item Created a web-based 3D modeling application with HTML, CSS, and JavaScript.
-% \item Worked in a team of two, utilizing Git version control and creating diagrams to evaluate
-% goals and stay organized.
-% \end{itemize}
-
-\end{resume}
+    \cvachievement{\faUsers}{ {\bfseries Outstanding Interdepartmental Collaboration} \hfill { \color{accent} \faCalendar}  \hspace{0.5em}{Jul 2024}\smallskip}
+    {Maintained a large portion of the Ruby on Rails app at Soomo Learning. Received recognition after making several recommendations and changes regarding model relationships and workflows. Also successfully implemented several new tools and features to help several other departments increase productivity.}\par
+    \medskip
+    
+    \smallskip 
+    \dividergray
+    \smallskip
+    
+    \cvachievement{\faTrophy}{ {\bfseries Outstanding Performance} \hfill { \color{accent} \faCalendar}  \hspace{0.5em}{May 2017}\smallskip}
+    {Received recognition for outstanding performance during a large-scale project for a client. Was one of three engineers to design and implement a large scale p2p payment application for IBM to use with their existing payment processing monolith. Over the course of a year, we designed, implemented, and deployed our code to several banks successfully to allow their customers access to the Zelle payment platform.}\par
+    
+    \medskip
 \end{document}
+
+
+
