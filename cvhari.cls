@@ -46,20 +46,20 @@
 
 \newcommand{\makecvheader}{%
   \begin{tikzpicture}[remember picture, overlay]
-    \fill[HeaderBg] (current page.north west) rectangle ([yshift=-8.2cm]current page.north east);
+    \fill[HeaderBg] (current page.north west) rectangle ([yshift=-6.2cm]current page.north east);
   \end{tikzpicture}%
   \begingroup \center
-    \vspace{0.3cm}
-    {\Large\bfseries\color{white}\textls[250]{\MakeUppercase{\@name}}\par}
+    \vspace{-0.5cm}
+    {\Large\bfseries\color{white}\textls[100]{\MakeUppercase{\@name}}\par}
     \smallskip
-    {\normalsize\bfseries\color{white}\textls[340]{\MakeUppercase{\@tagline}}\par}
+    {\normalsize\bfseries\color{white}\textls[150]{\MakeUppercase{\@tagline}}\par}
     \smallskip
     {\small\color{white}\faMapMarker\hspace{0.5em}\color{white}\@headerlocation\par}
     \smallskip
     {\center\footnotesize\bfseries\color{white}\@personalinfo\par}
     \smallskip
     {\center\@headercards\par}
-  \endgroup\medskip\medskip
+  \endgroup\medskip
 }
 
 
@@ -77,7 +77,7 @@
 
 \newcommand{\cvsection}[1]{%
   \bigskip%
-  {\color{accent}\small\bfseries\textls[250]{\MakeUppercase{#1}}}\\[-1ex]%
+  {\color{accent}\small\bfseries\textls[100]{\MakeUppercase{#1}}}\\[-1ex]%
   {\color{accent}\rule{\linewidth}{1.2pt}\par}\medskip
 }
 
@@ -91,13 +91,13 @@
 
 \newcommand{\company}[5]{%
 \smallskip
-    {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#1}}}}       \hfill
-    {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#2}}}}       \par
-    \smallskip
-    { \color{accent} \faMapMarker} \hspace{0.5em}{\color{body}{#3}}   \hfill 
+    {\small\color{body}\textls[50]{\textbf{\MakeUppercase{#1}}}}       \hfill
+    {\small\color{body}\textls[50]{\textbf{\MakeUppercase{#2}}}}       \par
+
+    \smallskip{\small\color{body}\textit{#5}}\medskip\hfill
     { \color{accent} \faCalendar}  \hspace{0.5em}{\color{body}{#4}}   \par
+    { \color{accent} \faMapMarker} \hspace{0.5em}{\color{body}{#3}}   \par
     \smallskip
-    {\color{body}\textit{#5}}\par
     \smallskip
 }
 
@@ -109,18 +109,18 @@
 \newcommand{\headercardwide}[2]{%
   \begin{tikzpicture}
     \node[draw=white,fill=white,rounded corners=5pt,inner xsep=1.5ex,inner ysep=1.4ex,text=Black,text width=0.45\textwidth,align=left] {
-      {\bfseries\scriptsize\MakeUppercase{#1}}\\[0.3em]
-      {\scriptsize #2}
+      {\linespread{0.2}\selectfont\bfseries\scriptsize\MakeUppercase{#1}}\\[0.1em]\smallskip
+      \parbox{\linewidth}{\scriptsize\renewcommand{\baselinestretch}{1}\selectfont #2}
     };
   \end{tikzpicture}%
 }
 
 \newcommand{\headercardsplit}[4]{%
   \begin{tikzpicture}
-    \node[draw=white,fill=white,rounded corners=5pt,inner xsep=1.3ex,inner ysep=0.8ex,text=Black,text width=0.45\textwidth,minimum height=8.3em] {
+    \node[draw=white,fill=white,rounded corners=5pt,inner xsep=1.3ex,inner ysep=0.8ex,text=Black,text width=0.45\textwidth,minimum height=6.3em] {
       \begin{tabular}{@{}p{0.25\textwidth}@{\hspace{0.3em}}|@{\hspace{1em}}p{0.70\textwidth}@{}}
-        {\bfseries\scriptsize\MakeUppercase{#1}} & {\scriptsize #2}\medskip\medskip\medskip\medskip \\[0.5em]
-        {\bfseries\scriptsize\MakeUppercase{#3}} & {\scriptsize #4}
+        {\linespread{0.9}\selectfont\bfseries\scriptsize\MakeUppercase{#1}} & \parbox{\linewidth}{\scriptsize\renewcommand{\baselinestretch}{1}\selectfont #2}\medskip\medskip \\[0.2em]
+        {\linespread{0.9}\selectfont\bfseries\scriptsize\MakeUppercase{#3}} & \parbox{\linewidth}{\scriptsize\renewcommand{\baselinestretch}{1}\selectfont #4}
       \end{tabular}
     };
   \end{tikzpicture}%
@@ -143,8 +143,8 @@
 
 \newcommand{\education}[3]{%
 \smallskip
-    {\small\color{body}\textls[140]{{\MakeUppercase{#1}}}}  \\
-    {\small\textls[140]{{{#2}}}}  %\par\smallskip 
+    {\small\color{body}\textls[50]{\textbf{\MakeUppercase{#1}}}}  \\
+    {\small\textls[50]{{{#2}}}}  %\par\smallskip 
     \hfill{ \color{accent} \faCalendar}  \hspace{0.5em}{{#3}}   \par
 }
 
@@ -162,7 +162,7 @@
 
 \newcommand{\skills}[1]{%
 \smallskip
-    {\small\color{body}\textls[140]{{\MakeUppercase{#1}}}}  \\
+    {\small\color{body}\textls[50]{{\MakeUppercase{#1}}}}  \\
     \smallskip
 }
 
