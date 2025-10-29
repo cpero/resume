@@ -6,16 +6,11 @@
 
 \RequirePackage{xcolor}
 
-\definecolor{VividPurple}{HTML}{2E64FE}
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{555555}
-\definecolor{AzureRadiance}{HTML}{00ABFF}
-\definecolor{DodgerBlue}{HTML}{4F83FF}
-\definecolor{ElectricViolet}{HTML}{9F00FF}
 \definecolor{Black}{HTML}{000000}
+\definecolor{HeaderBg}{HTML}{6A1122}
+\definecolor{Accent}{HTML}{AF1D37}
 
-% % Change the colour below to one of the above values.
-\colorlet{accent}{DodgerBlue} %Black!90 for print
+\colorlet{accent}{Accent} %Black!90 for print
 \colorlet{body}{Black!80}
 
 \RequirePackage{fontawesome}
@@ -30,7 +25,7 @@
 \newcommand{\mailsymbol}{\faEnvelope}
 \newcommand{\devsymbol}{\faCode}
 
-\newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{#1}\hspace{0.5em}#2\hspace{2em}}}
+\newcommand{\printinfo}[2]{\mbox{\textcolor{white}{#1}\hspace{0.5em}#2\hspace{2em}}}
 
 \newcommand{\email}[1]{\printinfo{\emailsymbol}{#1}}
 \newcommand{\mailaddress}[1]{\printinfo{\mailsymbol}{#1}}
@@ -43,17 +38,28 @@
 \newcommand{\location}[1]{\printinfo{\locationsymbol}{#1}}
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\tagline}[1]{\def\@tagline{#1}}
+\newcommand{\headerlocation}[1]{\def\@headerlocation{#1}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 
 
+\newcommand{\headercards}[1]{\def\@headercards{#1}}
+
 \newcommand{\makecvheader}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[HeaderBg] (current page.north west) rectangle ([yshift=-8.2cm]current page.north east);
+  \end{tikzpicture}%
   \begingroup \center
-    {\Large\bfseries\color{black}\textls[250]{\MakeUppercase{\@name}}\par}
+    \vspace{0.3cm}
+    {\Large\bfseries\color{white}\textls[250]{\MakeUppercase{\@name}}\par}
     \smallskip
-    {\normalsize\bfseries\color{accent}\textls[340]{\MakeUppercase{\@tagline}}\par}
+    {\normalsize\bfseries\color{white}\textls[340]{\MakeUppercase{\@tagline}}\par}
     \smallskip
-    {\center\footnotesize\bfseries\@personalinfo\par}
-  \endgroup\smallskip
+    {\small\color{white}\faMapMarker\hspace{0.5em}\color{white}\@headerlocation\par}
+    \smallskip
+    {\center\footnotesize\bfseries\color{white}\@personalinfo\par}
+    \smallskip
+    {\center\@headercards\par}
+  \endgroup\medskip\medskip
 }
 
 
@@ -83,7 +89,7 @@
 \setlist[itemize]{label=\itemmarker}
 
 
-\newcommand{\company}[4]{%
+\newcommand{\company}[5]{%
 \smallskip
     {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#1}}}}       \hfill
     {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#2}}}}       \par
@@ -91,11 +97,33 @@
     { \color{accent} \faMapMarker} \hspace{0.5em}{\color{body}{#3}}   \hfill 
     { \color{accent} \faCalendar}  \hspace{0.5em}{\color{body}{#4}}   \par
     \smallskip
+    {\color{body}\textit{#5}}\par
+    \smallskip
 }
 
 \RequirePackage{tikz}
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=accent,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.2ex,text depth=.2ex,fill=accent]{\bfseries\scriptsize\textcolor{white}{#1}};
+  \tikz[baseline]\node[anchor=base,draw=accent,rounded corners,inner xsep=0.75ex,inner ysep =0.75ex,text height=1.2ex,text depth=.2ex,fill=accent]{\bfseries\scriptsize\textcolor{white}{#1}};
+}
+
+\newcommand{\headercardwide}[2]{%
+  \begin{tikzpicture}
+    \node[draw=white,fill=white,rounded corners=5pt,inner xsep=1.5ex,inner ysep=1.4ex,text=Black,text width=0.45\textwidth,align=left] {
+      {\bfseries\scriptsize\MakeUppercase{#1}}\\[0.3em]
+      {\scriptsize #2}
+    };
+  \end{tikzpicture}%
+}
+
+\newcommand{\headercardsplit}[4]{%
+  \begin{tikzpicture}
+    \node[draw=white,fill=white,rounded corners=5pt,inner xsep=1.3ex,inner ysep=0.8ex,text=Black,text width=0.45\textwidth,minimum height=8.3em] {
+      \begin{tabular}{@{}p{0.25\textwidth}@{\hspace{0.3em}}|@{\hspace{1em}}p{0.70\textwidth}@{}}
+        {\bfseries\scriptsize\MakeUppercase{#1}} & {\scriptsize #2}\medskip\medskip\medskip\medskip \\[0.5em]
+        {\bfseries\scriptsize\MakeUppercase{#3}} & {\scriptsize #4}
+      \end{tabular}
+    };
+  \end{tikzpicture}%
 }
 
 \NewDocumentCommand{\splitoncomma}{ >{\SplitList{,}} m }{%
@@ -107,11 +135,10 @@
 }
 
 
-\newcommand{\project}[2]{%
-\bigskip
-    %\normalise
-    \textbf{Project:}  #1   \hfill \textbf{Technologies:} {#2}\par\smallskip
-    \textbf{Responsibilities:}\par\smallskip
+\newcommand{\technologies}[1]{%
+    \smallskip
+    \splitoncomma{#1}
+    \par\smallskip
 }
 
 \newcommand{\education}[3]{%
