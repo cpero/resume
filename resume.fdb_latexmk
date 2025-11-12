@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1761766908.93271 "/Users/codypero/Projects/resume/resume.tex" "resume.pdf" "resume" 1761766909.74922 0
-  "/Users/codypero/Projects/resume/resume.tex" 1761766908.7031 3839 c57d037653357fb9ab03ce387ae87f69 ""
+["pdflatex"] 1762978547.56833 "/Users/codypero/Projects/resume/resume.tex" "resume.pdf" "resume" 1762978548.38701 0
+  "/Users/codypero/Projects/resume/resume.tex" 1762978547.10786 3866 c4db81da52d986649b989bcd4f512f15 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1741388039 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/lato/a_rt66h3.enc" 1741388039 3345 f5bff336afd6959239b79815a9c623d1 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/lato/a_vc7epu.enc" 1741388039 2837 71470f4f1f9e810bb7f97954be46f052 ""
@@ -140,8 +140,8 @@
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/web2c/texmf.cnf" 1741388039 42151 79f67285bdd95beca4d137b380b4b9e5 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1741388039 3346140 981dae4097bc43850a521b8b1e36e95f ""
   "cvhari.cls" 1761766859.78648 6024 d952d4d6b5a1b6b3218c3359502bf618 ""
-  "resume.aux" 1761766909.65798 75 3f70b3dc069cda95b015bc09f1a717cd "pdflatex"
-  "resume.tex" 1761766908.7031 3839 c57d037653357fb9ab03ce387ae87f69 ""
+  "resume.aux" 1762978548.29509 75 3f70b3dc069cda95b015bc09f1a717cd "pdflatex"
+  "resume.tex" 1762978547.10786 3866 c4db81da52d986649b989bcd4f512f15 ""
   (generated)
   "resume.aux"
   "resume.log"
